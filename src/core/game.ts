@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { VerticalSliceScene } from '../scenes/VerticalSliceScene';
 import { BootScene } from '../scenes/BootScene';
 
 export const gameConfig: Phaser.Types.Core.GameConfig = {
@@ -7,6 +8,14 @@ export const gameConfig: Phaser.Types.Core.GameConfig = {
   width: 1280,
   height: 720,
   backgroundColor: '#1f1b1a',
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 980, x: 0 },
+      debug: false,
+    },
+  },
+  scene: [VerticalSliceScene],
   scene: [BootScene],
   scale: {
     mode: Phaser.Scale.FIT,
