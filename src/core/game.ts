@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { VerticalSliceScene } from '../scenes/VerticalSliceScene';
+import { BootScene } from '../scenes/BootScene';
 
 export const gameConfig: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
@@ -15,6 +16,7 @@ export const gameConfig: Phaser.Types.Core.GameConfig = {
     },
   },
   scene: [VerticalSliceScene],
+  scene: [BootScene],
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,

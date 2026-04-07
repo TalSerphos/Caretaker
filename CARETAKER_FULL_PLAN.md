@@ -65,6 +65,7 @@ caretaker/
 
 For each pen room:
 
+For each pen room:
 - required: `flower_id`, `water_id`, `ingredient_id`
 - tracked:
   - `vase.flowerItemId + expiresAt`
