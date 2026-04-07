@@ -19,3 +19,9 @@ This repository now contains **M2 (Vertical Slice + Movement Feel)**:
 - Local save/load for player position and simple bag ingredient state
 - Movement-feel pass: jump buffer, coyote time, variable jump height, and acceleration/drag tuning
 - Movement and feature flags centralized in `src/core/config.ts`
+This repository now contains **M0 Bootstrap**:
+
+- Vite + TypeScript project setup
+- Phaser game boot with a placeholder bootstrap scene
+- ESLint + Prettier configuration
+- GitHub Actions CI workflow for lint + build
