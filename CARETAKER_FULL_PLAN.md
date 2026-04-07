@@ -55,16 +55,13 @@ caretaker/
 ## 3) Systems blueprint (the critical rules encoded)
 
 ### A) Inventory mutex (non-negotiable)
-
 - `bag.mode = "forage" | "sick_animal" | "empty"`
 - If mode is `sick_animal`, no forage slots allowed.
 - If mode is `forage`, max 4 slots.
 - Water occupies one slot with `item_kind = water`.
 
 ### B) Healing validation
-
 For each pen room:
-
 - required: `flower_id`, `water_id`, `ingredient_id`
 - tracked:
   - `vase.flowerItemId + expiresAt`
@@ -73,14 +70,12 @@ For each pen room:
 - Heal triggers if all match at same evaluation tick.
 
 ### C) Dynamic house generation
-
 - Read `animal_room_count` from config.
 - Instantiate room prefab N times.
 - Rightmost room includes kitchen anchor + east forest door.
 - Room manager owns timers and state, not scene globals.
 
 ### D) Forest scaling
-
 - 1D chunk bands with vertical sub-platform detail.
 - Door origin at x=0; stream chunks by camera x.
 - Target one-way traverse: >=5 minutes.
@@ -92,7 +87,6 @@ For each pen room:
 ## 4) Milestones (8, improved from your draft)
 
 ## M0 — Foundation (3–4 days)
-
 - Phaser+TS scaffold, lint/format, scene boot
 - Save system v1 (`CharacterAppearance`, settings)
 - Config + feature flags
@@ -101,7 +95,6 @@ For each pen room:
 **Exit:** build works on desktop + Android browser.
 
 ## M1 — Vertical slice (4–6 days)
-
 - One home room + tiny forest strip
 - Pick up one ingredient, deposit interaction
 - Basic UI prompt + save/load loop
@@ -109,7 +102,6 @@ For each pen room:
 **Exit:** tiny but complete loop at public URL.
 
 ## M2 — Movement feel pass (5–7 days)
-
 - Coyote time, jump buffer, variable jump height, air accel/decel
 - Optional wall-jump/wall-slide flags
 - Camera follow + look-ahead
@@ -118,7 +110,6 @@ For each pen room:
 **Exit:** movement benchmark scene with tweakable constants.
 
 ## M3 — Inventory + kitchen (4–5 days)
-
 - Full bag mutex
 - Kitchen deposit/withdraw UI
 - Ingredient-only kitchen storage enforced
@@ -127,7 +118,6 @@ For each pen room:
 **Exit:** can’t violate inventory rules even with edge actions.
 
 ## M4 — Dynamic home + care rooms (4–6 days)
-
 - `animal_room_count` procedural instancing
 - Pen, tray, vase, table in each
 - Rightmost kitchen + forest door wiring
@@ -135,7 +125,6 @@ For each pen room:
 **Exit:** room count changes via config only.
 
 ## M5 — Heal gameplay loop (6–8 days)
-
 - Sick animal rarity spawn + pickup + pen placement
 - Speech UI with 3-part request
 - Flower/water expiry timers (45–90s tunable)
@@ -144,7 +133,6 @@ For each pen room:
 **Exit:** full intended loop end-to-end, saved state resilient.
 
 ## M6 — Large forest world (6–9 days)
-
 - Chunk streamer
 - 3 biomes + weighted spawn tables
 - Traverse telemetry log and validation
@@ -153,7 +141,6 @@ For each pen room:
 **Exit:** verified >=5 min one-way traversal.
 
 ## M7 — Art/audio/polish + PWA (7–10 days)
-
 - Replace placeholders with licensed assets
 - Palette grading + particles + ambience
 - Touch controls for Android
@@ -167,7 +154,6 @@ For each pen room:
 ## 5) Content spreadsheet schema (copy directly to CSV)
 
 Columns:
-
 - `id`
 - `display_name`
 - `kind` (`ingredient|flower|water|sick_animal|tool`)
@@ -181,7 +167,6 @@ Columns:
 - `notes`
 
 For healing requests:
-
 - `species_id`
 - `required_flower_id`
 - `required_water_id`
@@ -196,7 +181,6 @@ For healing requests:
 I prioritized sources with clear license metadata.
 
 ### Environment / Tiles / UI
-
 1. **Kenney – New Platformer Pack** (CC0, large 2D pack)
    https://kenney.nl/assets/new-platformer-pack
 2. **Kenney – Input Prompts** (CC0; keyboard/gamepad/touch glyphs)
@@ -209,12 +193,10 @@ I prioritized sources with clear license metadata.
    https://opengameart.org/content/forest-pass
 
 ### Character pipeline
-
 6. **Universal LPC Character Generator** (modular character generation pipeline; attribution-heavy but powerful)
    https://github.com/LiberatedPixelCup/Universal-LPC-Spritesheet-Character-Generator
 
 ### Audio starter
-
 7. **Kenney – Interface Sounds** (CC0 UI SFX)
    https://kenney.nl/assets/interface-sounds
 8. **Kenney – Impact Sounds** (CC0 feedback SFX)
